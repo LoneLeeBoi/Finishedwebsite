@@ -1,0 +1,139 @@
+/* Navigation */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+}
+
+/* Responsive navigation */
+@media screen and (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background: #1a1a1a;
+        padding: 2rem 1rem;
+        box-sizing: border-box;
+        transition: right 0.3s ease-in-out;
+        z-index: 999;
+        overflow-y: auto;
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .nav-menu ul {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    .nav-menu a {
+        font-size: 1.1rem;
+        color: white;
+        text-decoration: none;
+    }
+}
+
+/* Grid Layouts */
+.grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* Responsive grid layouts */
+@media screen and (max-width: 1200px) {
+    .grid-4 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .grid-3,
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .grid-2,
+    .grid-3,
+    .grid-4 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Ultra-small screens (≤ 480px) */
+@media screen and (max-width: 480px) {
+    .nav-toggle {
+        font-size: 1.25rem;
+        padding: 0.25rem;
+    }
+
+    .nav-menu {
+        width: 100%;
+        padding: 1.5rem 1rem;
+    }
+
+    .nav-menu a {
+        font-size: 1rem;
+    }
+
+    .grid {
+        gap: 1rem;
+    }
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    box-sizing: border-box;
+}
+
+/* Responsive container */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 0 0.75rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 0 0.5rem;
+    }
+}
